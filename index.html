@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="worldclock_icon.png">
+</head>
+
+<body>
+  <div id="search-and-convert">
+    <input type="text" id="searchBox" placeholder="Search country..." />
+    <button id="openConverterBtn">🛠️ Time Converter</button>
+  </div>
+
+  <div id="converterModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <!-- Masukin isi converter di sini -->
+      <div id="converterBody">
+        <div class="multi-converter">
+          <h2>Multi Timezone Converter</h2>
+          <label>From:</label>
+          <select id="baseZone"></select>
+          <input type="time" id="baseTime" />
+
+          <div id="targetZonesContainer"></div>
+          <button id="addZoneBtn">+ Add Country</button>
+
+          <button id="multiConvertBtn">Convert</button>
+          <button id="resetConverterBtn">Reset</button>
+          <div id="multiResult"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clock-container" id="clockContainer"></div>
+  <button id="backToTop" title="Go to top">🔝</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
