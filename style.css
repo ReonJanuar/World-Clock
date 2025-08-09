@@ -200,3 +200,40 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+  }
+
+  .multi-converter select,
+  .multi-converter input {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .multi-converter button {
+    font-size: 14px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  #resetConverterBtn,
+  #multiConvertBtn {
+    width: 48%;
+    display: inline-block;
+  }
+
+  .flag {
+    height: 80px;
+  }
+
+  #searchBox {
+    width: 90%;
+    font-size: 16px;
+  }
+}
