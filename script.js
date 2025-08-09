@@ -215,7 +215,7 @@ function renderClocks(zones) {
     clockBox.className = "clock";
 
     const flagImg = document.createElement("img");
-    flagImg.src = `${zone.flag}`;
+    flagImg.src = `flags/${zone.flag}`;
     flagImg.alt = zone.name;
     flagImg.className = "flag";
     clockBox.appendChild(flagImg);
@@ -356,3 +356,24 @@ window.addEventListener("click", (e) => {
   const modal = document.getElementById("converterModal");
   if (e.target === modal) modal.style.display = "none";
 });
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  
+  // Ubah icon tombol
+  if (document.body.classList.contains("light-mode")) {
+    themeToggle.textContent = "☀️";
+    localStorage.setItem("theme", "light");
+  } else {
+    themeToggle.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// Load theme dari localStorage pas buka halaman
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light-mode");
+  themeToggle.textContent = "☀️";
+}
