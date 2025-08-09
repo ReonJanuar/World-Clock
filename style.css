@@ -241,10 +241,10 @@ body {
 
 @media (max-width: 600px) {
   #baseTime {
-    width: 40%;
+    width: 100%;
   }
   #baseZone {
-    width: 40%;
+    width: 100%;
   }
 }
   
@@ -257,6 +257,7 @@ body {
     font-size: 16px;
   }
 }
+
 
 
 
