@@ -239,6 +239,12 @@ body {
   background: #009900;
 }
 
+@media (max-width: 600px) {
+  #baseTime {
+    width: 100%;
+  }
+}
+
   .flag {
     height: 80px;
   }
