@@ -239,9 +239,9 @@ body {
   background: #009900;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 100px) {
   #baseTime {
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -254,5 +254,6 @@ body {
     font-size: 16px;
   }
 }
+
 
 
