@@ -215,7 +215,7 @@ function renderClocks(zones) {
     clockBox.className = "clock";
 
     const flagImg = document.createElement("img");
-    flagImg.src = `flags/${zone.flag}`;
+    flagImg.src = `${zone.flag}`;
     flagImg.alt = zone.name;
     flagImg.className = "flag";
     clockBox.appendChild(flagImg);
@@ -377,3 +377,4 @@ if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-mode");
   themeToggle.textContent = "☀️";
 }
+
