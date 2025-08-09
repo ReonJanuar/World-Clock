@@ -239,18 +239,15 @@ body {
   background: #009900;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 600px) {
+  #baseTime {
+    width: 40%;
+  }
   #baseZone {
     width: 40%;
   }
 }
-
-@media (max-width: 100px) {
-  #baseTime {
-    width: 33%;
-  }
-}
-
+  
   .flag {
     height: 80px;
   }
@@ -260,6 +257,7 @@ body {
     font-size: 16px;
   }
 }
+
 
 
 
