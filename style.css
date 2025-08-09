@@ -239,7 +239,7 @@ body {
   background: #009900;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
   #baseTime {
     width: 100%;
   }
@@ -254,3 +254,4 @@ body {
     font-size: 16px;
   }
 }
+
