@@ -53,6 +53,7 @@ body {
   border-radius: 8px;
   border: none;
   width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 #backToTop {
@@ -199,4 +200,64 @@ body {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+:root {
+  --bg-color: #111;
+  --text-color: #fff;
+  --card-bg: #222;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.clock {
+  background: var(--card-bg);
+}
+
+.light-mode {
+  --bg-color: #f9f9f9;
+  --text-color: #000;
+  --card-bg: #fff;
+}
+
+body, .clock {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Tombol toggle dark/light */
+#themeToggle {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Biar pas ganti tema, tombolnya juga ikut berubah smooth */
+body, .clock, #themeToggle {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Mode light tombol */
+.light-mode #themeToggle {
+  background-color: #ddd;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode #themeToggle:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
