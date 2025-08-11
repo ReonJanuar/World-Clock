@@ -150,12 +150,6 @@ body {
   margin-top: 1rem;
 }
 
-#openConverterBtn:hover {
-  background-color: #666;
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
-}
-
 /* Modal background */
 .modal {
   display: none; 
@@ -199,6 +193,7 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center; /* ini kuncinya */
   flex-wrap: wrap;
 }
 
@@ -227,37 +222,111 @@ body, .clock {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Tombol toggle dark/light */
-#themeToggle {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  font-size: 1.2rem;
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  margin-right: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: background-color 0.4s;
+  border-radius: 26px;
 }
 
-#themeToggle:hover {
-  transform: scale(1.1) rotate(10deg);
-  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+.slider:before {
+  position: absolute;
+  content: "🌙"; /* default dark mode */
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: transform 0.4s, background-color 0.4s, content 0.4s;
 }
 
-/* Biar pas ganti tema, tombolnya juga ikut berubah smooth */
-body, .clock, #themeToggle {
-  transition: background 0.3s ease, color 0.3s ease;
+/* Mode Light */
+input:checked + .slider {
+  background-color: #ffd700; /* kuning */
 }
 
-/* Mode light tombol */
-.light-mode #themeToggle {
-  background-color: #ddd;
-  color: #000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+input:checked + .slider:before {
+  transform: translateX(24px);
+  content: "☀️"; /* ganti icon jadi matahari */
 }
 
-.light-mode #themeToggle:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+/* Sidebar Styles */
+#openSidebar {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  background: var(--card-bg);
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1200;
+  top: 0;
+  left: 0;
+  background-color: var(--card-bg);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+#sidebar.open {
+  width: 250px;
+}
+
+#sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.sidebar-btn {
+  display: block;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 18px;
+  background: none;
+  border: none;
+  width: 100%;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-btn:hover {
+  background: rgba(255,255,255,0.1);
 }
