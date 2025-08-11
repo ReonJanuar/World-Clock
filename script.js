@@ -343,10 +343,6 @@ function resetConverter() {
 }
 document.getElementById("resetConverterBtn").addEventListener("click", resetConverter);
 
-document.getElementById("openConverterBtn").addEventListener("click", () => {
-  document.getElementById("converterModal").style.display = "block";
-});
-
 document.getElementById("closeModalBtn").addEventListener("click", () => {
   document.getElementById("converterModal").style.display = "none";
 });
@@ -378,3 +374,28 @@ if (localStorage.getItem("theme") === "light") {
   themeToggle.textContent = "☀️";
 }
 
+// Sidebar toggle
+const openSidebar = document.getElementById("openSidebar");
+const closeSidebar = document.getElementById("closeSidebar");
+const sidebar = document.getElementById("sidebar");
+
+openSidebar.addEventListener("click", () => {
+  sidebar.classList.add("open");
+});
+closeSidebar.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+});
+
+// Sidebar buttons
+document.getElementById("sidebarConverterBtn").addEventListener("click", () => {
+  document.getElementById("converterModal").style.display = "block";
+  sidebar.classList.remove("open");
+});
+
+document.getElementById("sidebarMapBtn").addEventListener("click", () => {
+  alert("Fitur peta dunia belum dibuat. 😉");
+});
+
+document.getElementById("sidebarFavBtn").addEventListener("click", () => {
+  alert("Fitur daftar favorit belum dibuat. 😉");
+});
