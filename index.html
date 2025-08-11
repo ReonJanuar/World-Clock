@@ -8,13 +8,26 @@
   <link rel="icon" type="image/png" href="worldclock_icon.png">
 </head>
 
-<body>
-  <div id="search-and-convert">
-    <button id="themeToggle">🌙</button>
-    <input type="text" id="searchBox" placeholder="Search country..." />
-    <button id="openConverterBtn">🛠️ Time Converter</button>
+<body>  
+  <!-- Sidebar Toolbar -->
+  <div id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" id="closeSidebar">&times;</a>
+    <button class="sidebar-btn" id="sidebarConverterBtn">🛠️ Time Converter</button>
+    <button class="sidebar-btn" id="sidebarMapBtn">🗺️ Peta Dunia</button>
+    <button class="sidebar-btn" id="sidebarFavBtn">⭐ Favorit</button>
   </div>
 
+  <!-- Tombol buka sidebar -->
+  <span id="openSidebar">&#9776;</span>
+
+  <div id="search-and-convert">
+    <input type="text" id="searchBox" placeholder="Search country..." />
+    <label class="theme-switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  
   <div id="converterModal" class="modal">
     <div class="modal-content">
       <span id="closeModalBtn" class="close">&times;</span>
@@ -43,5 +56,6 @@
 </body>
 
 </html>
+
 
 
