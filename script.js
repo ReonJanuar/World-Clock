@@ -355,24 +355,16 @@ window.addEventListener("click", (e) => {
 
 const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-  
-  // Ubah icon tombol
-  if (document.body.classList.contains("light-mode")) {
-    themeToggle.textContent = "☀️";
-    localStorage.setItem("theme", "light");
-  } else {
-    themeToggle.textContent = "🌙";
-    localStorage.setItem("theme", "dark");
-  }
-});
-
-// Load theme dari localStorage pas buka halaman
+// Load theme dari localStorage
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-mode");
-  themeToggle.textContent = "☀️";
+  themeToggle.checked = true;
 }
+
+themeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("light-mode", themeToggle.checked);
+  localStorage.setItem("theme", themeToggle.checked ? "light" : "dark");
+});
 
 // Sidebar toggle
 const openSidebar = document.getElementById("openSidebar");
